@@ -7,6 +7,12 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
+  devServer: {
+    contentBase: './dist',
+    compress: true,
+    port: 9000
+  },
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve('dist'),
     filename: 'index.js',
@@ -27,12 +33,12 @@ module.exports = {
             }
           },
           {
-            loader: 'css-loader',
+            loader: 'typings-for-css-modules-loader',
             options: {
-              importLoaders: 1,
-              modules: true
+              modules: true,
+              namedExport: true
             }
-          }
+          },
         ]
       },
       {
@@ -42,14 +48,19 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: [ '.tsx', '.ts', '.js' ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
+      filename: '[name].css',
     }),
   ]
 }

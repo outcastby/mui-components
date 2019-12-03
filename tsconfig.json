@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "es6",
+    "outDir": "dist",
+    "strict": true,
+    "project": "./tsconfig.json",
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
