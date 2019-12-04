@@ -30,13 +30,13 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true
+              modules: true,
             }
           }
         ]
       },
       {
-        test: /\.m?js$/,
+        test: /\.m?jsx?$/,
         exclude: /(node_modules)/,
         use: {
           loader: "babel-loader"
@@ -45,7 +45,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new MiniCssExtractPlugin({
