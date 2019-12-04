@@ -32,8 +32,8 @@ function CustomInput({ ...props }) {
 
   const formattedName = _.isArray(name) ? name.join(',') : name
   const labelClasses = classNames({
-    [' ' + classes.labelRootError]: error,
-    [' ' + classes.labelRootSuccess]: success && !error,
+    [` ${classes.labelRootError}`]: error,
+    [` ${classes.labelRootSuccess}`]: success && !error,
   })
   const underlineClasses = classNames({
     [classes.underlineError]: error,
@@ -61,13 +61,11 @@ function CustomInput({ ...props }) {
   return (
     <FormControl {...formControlProps} className={formControlClasses}>
       {labelText !== undefined ? (
-        <InputLabel className={classes.labelRoot + ' ' + labelClasses} htmlFor={id} {...labelProps}>
+        <InputLabel className={`${classes.labelRoot} ${labelClasses}`} htmlFor={id} {...labelProps}>
           {labelText}
         </InputLabel>
       ) : null}
       <Input
-        name={formattedName}
-        value={value === 0 ? 0 : value || ''}
         classes={{
           input: inputClasses,
           root: marginTop,
@@ -75,10 +73,12 @@ function CustomInput({ ...props }) {
           underline: underlineClasses,
         }}
         id={id}
+        name={formattedName}
+        value={value === 0 ? 0 : value || ''}
         {...inputProps}
       />
       {helpText !== undefined ? (
-        <FormHelperText id={id + '-text'} className={helpTextClasses}>
+        <FormHelperText className={helpTextClasses} id={`${id}-text`}>
           {helpText}
         </FormHelperText>
       ) : null}
@@ -88,12 +88,12 @@ function CustomInput({ ...props }) {
 
 CustomInput.propTypes = {
   classes: PropTypes.object.isRequired,
+  formControlProps: PropTypes.object,
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
   id: PropTypes.string,
   value: PropTypes.string,
   inputProps: PropTypes.object,
-  formControlProps: PropTypes.object,
   inputRootCustomClasses: PropTypes.string,
   error: PropTypes.bool,
   success: PropTypes.bool,

@@ -1,5 +1,5 @@
-import React from 'react';
-import CustomInput from "./CustomInput";
+import React from 'react'
+import CustomInput from './CustomInput'
 
 export default {
   title: 'Base|Custom Input',
@@ -7,9 +7,9 @@ export default {
     component: CustomInput,
     componentSubtitle: 'Custom Input',
   },
-};
+}
 
-export const withLabel = () => <CustomInput labelText="Name" />;
-export const withHelpText = () => <CustomInput labelText="Name" helpText="Look at that..." />;
-export const withError = () => <CustomInput labelText="Name" error />;
-export const withSuccess = () => <CustomInput labelText="Name" success value="Atanych" />;
+export const withLabel = () => <CustomInput labelText="Name" />
+export const withHelpText = () => <CustomInput helpText="Look at that..." labelText="Name" />
+export const withError = () => <CustomInput error labelText="Name" />
+export const withSuccess = () => <CustomInput labelText="Name" success value="Atanych" />

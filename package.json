@@ -13,10 +13,10 @@
   "peerDependencies": {
     "@material-ui/core": "3.x",
     "@material-ui/icons": "3.x",
-    "lodash": "^4.x",
     "classnames": "^2.x",
-    "react": "16.x",
-    "prop-types": "^15.x"
+    "lodash": "^4.x",
+    "prop-types": "^15.x",
+    "react": "16.x"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -30,21 +30,32 @@
     "@storybook/addon-storyshots": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
     "classnames": "^2.2.6",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "husky": "^3.1.0",
     "jest": "^24.9.0",
+    "lint-staged": "^9.5.0",
     "lodash": "^4.17.15",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "prettier": "^1.19.1",
+    "prettier-eslint": "^9.0.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
-    "prop-types": "^15.7.2",
     "webpack-cli": "^3.3.10"
   },
   "babel": {
@@ -60,6 +71,18 @@
       }
     }
   },
-  "dependencies": {
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix  \"**/*.{js,jsx}\"",
+      "prettier -l \"**/*.{js,jsx,scss}\" --write",
+      "jest",
+      "git add"
+    ]
   }
 }

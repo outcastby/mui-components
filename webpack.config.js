@@ -1,8 +1,8 @@
-const path = require('path');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const devMode = process.env.NODE_ENV !== 'production';
+const path = require('path')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   mode: 'production',
@@ -23,24 +23,24 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           },
           {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
               modules: true,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.m?jsx?$/,
         exclude: /(node_modules)/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
     ],
   },
@@ -51,5 +51,5 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
     }),
-  ]
+  ],
 }

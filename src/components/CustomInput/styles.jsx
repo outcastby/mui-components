@@ -17,7 +17,7 @@ const customInputStyle = {
   },
   underlineError: {
     '&:before': {
-      borderColor: dangerColor + ' !important',
+      borderColor: `${dangerColor} !important`,
       borderWidth: '2px !important',
     },
   },
@@ -38,10 +38,10 @@ const customInputStyle = {
     },
   },
   labelRootError: {
-    color: dangerColor + ' !important',
+    color: `${dangerColor} !important`,
   },
   labelRootSuccess: {
-    color: successColor + ' !important',
+    color: `${successColor} !important`,
   },
   formControl: {
     margin: '0 0 17px 0',
