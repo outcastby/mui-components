@@ -1,2 +1,1 @@
-import Compon from './Compon'
-export default Compon
+export { default as CustomInput } from './components/CustomInput'

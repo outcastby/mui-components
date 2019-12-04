@@ -6,17 +6,24 @@
   "scripts": {
     "clean": "rm dist/bundle.js",
     "build": "webpack -p --mode production",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook",
     "build-storybook": "build-storybook",
     "test": "jest"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "@material-ui/core": "3.x",
+    "@material-ui/icons": "3.x",
+    "lodash": "^4.x",
+    "classnames": "^2.x",
+    "react": "16.x",
+    "prop-types": "^15.x"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-react": "^7.7.4",
+    "@material-ui/core": "3.1.0",
+    "@material-ui/icons": "3.0.1",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-docs": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
@@ -25,7 +32,9 @@
     "@storybook/react": "^5.2.8",
     "babel-loader": "^8.0.6",
     "babel-plugin-require-context-hook": "^1.0.0",
+    "classnames": "^2.2.6",
     "jest": "^24.9.0",
+    "lodash": "^4.17.15",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -35,6 +44,7 @@
     "sass-loader": "^8.0.0",
     "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
+    "prop-types": "^15.7.2",
     "webpack-cli": "^3.3.10"
   },
   "babel": {
@@ -44,11 +54,12 @@
     ],
     "env": {
       "test": {
-        "plugins": ["require-context-hook"]
+        "plugins": [
+          "require-context-hook"
+        ]
       }
     }
   },
   "dependencies": {
-    "prop-types": "^15.7.2"
   }
 }
