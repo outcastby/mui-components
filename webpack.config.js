@@ -18,7 +18,27 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.scss|\.css$/i,
+        exclude: /\.module\.scss$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              sideEffects: true,
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              import: true,
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.module\.scss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -42,14 +62,26 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+        },
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
     ],
   },
   resolve: {
+    mainFields: ['browser', 'main', 'module'],
     extensions: ['.js', '.jsx'],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
+      filename: '[name].css',
     }),
   ],
 }

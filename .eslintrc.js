@@ -41,6 +41,7 @@ module.exports = {
     'react/jsx-one-expression-per-line': 0,
     'react/jsx-max-props-per-line': 0,
     'react/no-unescaped-entities': 0,
+    'react/no-danger': 0,
   },
   extends: ['eslint:recommended', 'plugin:react/all'],
   globals: {

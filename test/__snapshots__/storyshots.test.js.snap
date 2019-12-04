@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Base|Custom Input With Error 1`] = `
+<div
+  className="MuiFormControl-root-138 CustomInput-formControl-134"
+>
+  <label
+    className="MuiFormLabel-root-149 MuiInputLabel-root-142 MuiInputLabel-formControl-143 MuiInputLabel-animated-146 CustomInput-labelRoot-131  CustomInput-labelRootError-132"
+    data-shrink={false}
+  >
+    Name
+  </label>
+  <div
+    className="MuiInputBase-root-169 MuiInput-root-156 MuiInput-underline-160 CustomInput-underlineError-129 CustomInput-underline-128 MuiInputBase-formControl-170 MuiInput-formControl-157"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      className="MuiInputBase-input-179 MuiInput-input-164 CustomInput-input-136"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base|Custom Input With Help Text 1`] = `
+<div
+  className="MuiFormControl-root-71 CustomInput-formControl-67"
+>
+  <label
+    className="MuiFormLabel-root-82 MuiInputLabel-root-75 MuiInputLabel-formControl-76 MuiInputLabel-animated-79 CustomInput-labelRoot-64 "
+    data-shrink={false}
+  >
+    Name
+  </label>
+  <div
+    className="MuiInputBase-root-102 MuiInput-root-89 MuiInput-underline-93 CustomInput-underline-61 MuiInputBase-formControl-103 MuiInput-formControl-90"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      className="MuiInputBase-input-112 MuiInput-input-97 CustomInput-input-69"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+      value=""
+    />
+  </div>
+  <p
+    className="MuiFormHelperText-root-119"
+    id="undefined-text"
+  >
+    Look at that...
+  </p>
+</div>
+`;
+
+exports[`Storyshots Base|Custom Input With Label 1`] = `
+<div
+  className="MuiFormControl-root-12 CustomInput-formControl-8"
+>
+  <label
+    className="MuiFormLabel-root-23 MuiInputLabel-root-16 MuiInputLabel-formControl-17 MuiInputLabel-animated-20 CustomInput-labelRoot-5 "
+    data-shrink={false}
+  >
+    Name
+  </label>
+  <div
+    className="MuiInputBase-root-43 MuiInput-root-30 MuiInput-underline-34 CustomInput-underline-2 MuiInputBase-formControl-44 MuiInput-formControl-31"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      className="MuiInputBase-input-53 MuiInput-input-38 CustomInput-input-10"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base|Custom Input With Success 1`] = `
+<div
+  className="MuiFormControl-root-197 CustomInput-formControl-193"
+>
+  <label
+    className="MuiFormLabel-root-208 MuiFormLabel-filled-212 MuiInputLabel-root-201 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-shrink-204 CustomInput-labelRoot-190  CustomInput-labelRootSuccess-192"
+    data-shrink={true}
+  >
+    Name
+  </label>
+  <div
+    className="MuiInputBase-root-228 MuiInput-root-215 MuiInput-underline-219 CustomInput-underlineSuccess-189 CustomInput-underline-187 MuiInputBase-formControl-229 MuiInput-formControl-216"
+    onClick={[Function]}
+  >
+    <input
+      aria-invalid={false}
+      className="MuiInputBase-input-238 MuiInput-input-223 CustomInput-input-195"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      required={false}
+      type="text"
+      value="Atanych"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base|GridContainer Base 1`] = `
+<div
+  className="MuiGrid-container-580 undefined undefined"
+>
+  <div
+    className="MuiGrid-item-581 GridItem-grid-677 undefined"
+  >
+    1
+  </div>
+  <div
+    className="MuiGrid-item-581 GridItem-grid-677 undefined"
+  >
+    2
+  </div>
+  <div
+    className="MuiGrid-item-581 GridItem-grid-677 undefined"
+  >
+    3
+  </div>
+</div>
+`;
+
+exports[`Storyshots Base|GridItem Base 1`] = `
+<div
+  className="MuiGrid-item-680 GridItem-grid-678 undefined"
+>
+  Aaa
+</div>
+`;
+
+exports[`Storyshots Form|Inputs/Text With Error 1`] = `
+<div
+  className="MuiGrid-item-247 MuiGrid-grid-xs-12-286 MuiGrid-grid-sm-7-295 GridItem-grid-245 undefined"
+>
+  <div
+    className="MuiFormControl-root-354 MuiFormControl-fullWidth-357 CustomInput-formControl-350"
+  >
+    <label
+      className="MuiFormLabel-root-365 MuiInputLabel-root-358 MuiInputLabel-formControl-359 MuiInputLabel-animated-362 CustomInput-labelRoot-347  CustomInput-labelRootError-348"
+      data-shrink={false}
+    />
+    <div
+      className="MuiInputBase-root-385 MuiInput-root-372 MuiInput-underline-376 CustomInput-underlineError-345 CustomInput-underline-344 MuiInputBase-formControl-386 MuiInput-formControl-373 MuiInputBase-adornedEnd-390"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        className="MuiInputBase-input-395 MuiInput-input-380 CustomInput-input-352 MuiInputBase-inputAdornedEnd-401"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="text"
+        value=""
+      />
+      <div
+        className="MuiInputAdornment-root-402 MuiInputAdornment-positionEnd-405"
+      >
+        <svg
+          aria-hidden="true"
+          className="MuiSvgIcon-root-406 text-danger"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Form|Inputs/Text With Success And Help Text 1`] = `
+<div
+  className="MuiGrid-item-417 MuiGrid-grid-xs-12-456 MuiGrid-grid-sm-7-465 GridItem-grid-415 undefined"
+>
+  <div
+    className="MuiFormControl-root-524 MuiFormControl-fullWidth-527 CustomInput-formControl-520"
+  >
+    <label
+      className="MuiFormLabel-root-535 MuiInputLabel-root-528 MuiInputLabel-formControl-529 MuiInputLabel-animated-532 CustomInput-labelRoot-517  CustomInput-labelRootSuccess-519"
+      data-shrink={false}
+    />
+    <div
+      className="MuiInputBase-root-555 MuiInput-root-542 MuiInput-underline-546 CustomInput-underlineSuccess-516 CustomInput-underline-514 MuiInputBase-formControl-556 MuiInput-formControl-543 MuiInputBase-adornedEnd-560"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        className="MuiInputBase-input-565 MuiInput-input-550 CustomInput-input-522 MuiInputBase-inputAdornedEnd-571"
+        disabled={false}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        required={false}
+        type="text"
+        value=""
+      />
+    </div>
+    <p
+      className="MuiFormHelperText-root-572 CustomInput-labelRootSuccess-519"
+      id="undefined-text"
+    >
+      Some useful info...
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,6 @@
+.jest
+.storybook
+__mocks__
+test
+node_modules
+

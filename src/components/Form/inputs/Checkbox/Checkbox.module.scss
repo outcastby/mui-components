@@ -1,0 +1,17 @@
+.checkedIcon {
+  width: 20px !important;
+  height: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 3px;
+}
+.uncheckedIcon {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 9px;
+  border: 1px solid rgba(0, 0, 0, 0.54);
+  border-radius: 3px;
+}
+
+.checkRoot {
+  padding: 14px;
+}
