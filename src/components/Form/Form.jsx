@@ -23,6 +23,7 @@ function Form({
         {doubleActionsButtons && <ActionButtons onSubmit={onSubmit} />}
         {fields.map((field) => {
           const value = fp.getIn(state, field.path || [field.name])
+          console.log('INPUT ROW', field, InputRow)
           return (
             <InputRow
               actionType={type}
