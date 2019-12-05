@@ -2,14 +2,14 @@ import React from 'react'
 import Icon from '@material-ui/core/Icon'
 import GridItem from '../../../components/Grid/GridItem'
 import Button from '../../../components/CustomButtons/Button'
-import { InputRow } from '@outcast.by/js-ext'
 import InfoPopover from '../../../components/InfoPopover'
 import styles from '../InputRow/InputRow.module.scss'
 import FormLabel from '@material-ui/core/FormLabel'
 import Accordion from '../../../components/Accordion/Accordion.jsx'
 import GridContainer from '../../../components/Grid/GridContainer'
 
-const InputList = ({ layout, hasLabel, values, name, onChange, field, onAdd, onRemove, config }) => {
+const InputList = (props) => {
+  const { hasLabel, values, field, onAdd, onRemove, renderRow } = props
   return (
     <GridContainer>
       <GridItem sm={3} xs={12}>
@@ -47,14 +47,7 @@ const InputList = ({ layout, hasLabel, values, name, onChange, field, onAdd, onR
               ),
               content: (
                 <GridContainer className="mt10" key={item.__uuid || j}>
-                  <InputRow
-                    config={config}
-                    field={{ ...field, name: [...name, j], label: hasLabel ? false : field.label }}
-                    grid={{ input: 9, right: 0, label: 3 }}
-                    layout={layout}
-                    onChange={onChange}
-                    value={item}
-                  />
+                  {renderRow(field, j, { grid: { input: 9, right: 0, label: 3 } })}
                   <GridItem sm={12} xs={12}>
                     <Button color="white" justIcon onClick={() => onRemove(item)} round style={{ float: 'right' }}>
                       <Icon>delete</Icon>

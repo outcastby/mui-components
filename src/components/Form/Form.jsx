@@ -1,45 +1,15 @@
 import React from 'react'
-import { fp } from '@outcast.by/js-ext'
 import GridContainer from '../../components/Grid/GridContainer.jsx'
 import GridItem from '../../components/Grid/GridItem.jsx'
 import Button from '../../components/CustomButtons/Button.jsx'
-import { InputRow } from '@outcast.by/js-ext'
 import PropTypes from 'prop-types'
 
-function Form({
-  settings: { doubleActionsButtons, fields, layout },
-  customButtons,
-  errors,
-  type,
-  entity,
-  onChange,
-  onSubmit,
-  state,
-  config,
-}) {
+function Form({ settings: { doubleActionsButtons }, customButtons, onSubmit, children }) {
   return (
     <div id="form-container">
       <form>
         {doubleActionsButtons && <ActionButtons onSubmit={onSubmit} />}
-        {fields.map((field) => {
-          const value = fp.getIn(state, field.path || [field.name])
-          console.log('INPUT ROW', field, InputRow)
-          return (
-            <InputRow
-              actionType={type}
-              config={config}
-              error={!!errors[field.name]}
-              field={field}
-              helpText={errors[field.name] ? errors[field.name][0] : ''}
-              id={entity.id}
-              key={field.name}
-              layout={layout}
-              onChange={onChange}
-              success={false}
-              value={value === 0 ? 0 : value || ''}
-            />
-          )
-        })}
+        {children}
         {customButtons ? customButtons({ onSubmit }) : <ActionButtons onSubmit={onSubmit} />}
       </form>
     </div>
@@ -52,10 +22,14 @@ Form.defaultProps = {
 }
 
 Form.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
   config: PropTypes.object,
   customButtons: PropTypes.func,
+  // eslint-disable-next-line react/no-unused-prop-types
   entity: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   errors: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   /**
@@ -66,7 +40,9 @@ Form.propTypes = {
     fields: PropTypes.arrayOf(PropTypes.object),
     layout: PropTypes.oneOf(['horizontal', 'vertical']),
   }).isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   state: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/no-unused-prop-types
   type: PropTypes.oneOf(['new', 'edit']).isRequired,
 }
 

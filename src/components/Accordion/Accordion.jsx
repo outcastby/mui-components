@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 // @material-ui/core components
@@ -12,61 +12,69 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 
 import accordionStyle from './accordionStyle.jsx'
 
-function Accordion({ active: act, classes, collapses }) {
-  const [active, setActive] = useState(act)
+class Accordion extends React.Component {
+  static propTypes = {
+    // index of the default active collapse
+    active: PropTypes.number,
+    classes: PropTypes.object.isRequired,
+    collapses: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.node,
+        content: PropTypes.node,
+      })
+    ).isRequired,
+  }
 
-  const handleChange = (panel) => (event, expanded) => {
-    setActive({
+  static defaultProps = {
+    active: -1,
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      active: props.active,
+    }
+  }
+
+  handleChange = (panel) => (event, expanded) => {
+    this.setState({
       active: expanded ? panel : -1,
     })
   }
 
-  return (
-    <div className={classes.root}>
-      {collapses.map((prop, key) => {
-        return (
-          <ExpansionPanel
-            classes={{
-              root: classes.expansionPanel,
-              expanded: classes.expansionPanelExpanded,
-            }}
-            expanded={active === key}
-            key={key}
-            onChange={handleChange(key)}
-          >
-            <ExpansionPanelSummary
+  render() {
+    const { collapses, classes } = this.props
+    return (
+      <div className={classes.root}>
+        {collapses.map((prop, key) => {
+          return (
+            <ExpansionPanel
               classes={{
-                root: classes.expansionPanelSummary,
-                expanded: classes.expansionPanelSummaryExpaned,
-                content: classes.expansionPanelSummaryContent,
-                expandIcon: classes.expansionPanelSummaryExpandIcon,
+                root: classes.expansionPanel,
+                expanded: classes.expansionPanelExpanded,
               }}
-              expandIcon={<ExpandMore />}
+              expanded={this.state.active === key}
+              key={key}
+              onChange={this.handleChange(key)}
             >
-              <h4 className={classes.title}>{prop.title}</h4>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.expansionPanelDetails}>{prop.content}</ExpansionPanelDetails>
-          </ExpansionPanel>
-        )
-      })}
-    </div>
-  )
-}
-
-Accordion.defaultProps = {
-  active: -1,
-}
-
-Accordion.propTypes = {
-  // index of the default active collapse
-  active: PropTypes.number,
-  classes: PropTypes.object.isRequired,
-  collapses: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.node,
-      content: PropTypes.node,
-    })
-  ).isRequired,
+              <ExpansionPanelSummary
+                classes={{
+                  root: classes.expansionPanelSummary,
+                  expanded: classes.expansionPanelSummaryExpaned,
+                  content: classes.expansionPanelSummaryContent,
+                  expandIcon: classes.expansionPanelSummaryExpandIcon,
+                }}
+                expandIcon={<ExpandMore />}
+              >
+                <h4 className={classes.title}>{prop.title}</h4>
+              </ExpansionPanelSummary>
+              <ExpansionPanelDetails className={classes.expansionPanelDetails}>{prop.content}</ExpansionPanelDetails>
+            </ExpansionPanel>
+          )
+        })}
+      </div>
+    )
+  }
 }
 
 export default withStyles(accordionStyle)(Accordion)

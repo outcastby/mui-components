@@ -12,7 +12,7 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  plugins: ['react', 'import'],
+  plugins: ['react', 'import', 'react-hooks'],
   rules: {
     semi: [2, 'never'],
     'max-len': [2, 120, 2],
@@ -42,6 +42,12 @@ module.exports = {
     'react/jsx-max-props-per-line': 0,
     'react/no-unescaped-entities': 0,
     'react/no-danger': 0,
+    'react/no-set-state': 0,
+    'react/destructuring-assignment': 0,
+    'react/no-unused-state': 0,
+    'react/require-optimization': 0,
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
   },
   extends: ['eslint:recommended', 'plugin:react/all'],
   globals: {

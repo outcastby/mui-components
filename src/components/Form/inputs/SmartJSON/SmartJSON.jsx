@@ -1,12 +1,9 @@
 import React, { Fragment } from 'react'
-import _ from 'lodash'
-import { InputRow } from '@outcast.by/js-ext'
 import GridItem from '../../../../components/Grid/GridItem.jsx'
 import Tabs from './Tabs'
 import GridContainer from '../../../../components/Grid/GridContainer'
 import Accordion from '../../../../components/Accordion/Accordion'
 
-console.log('InputRow', InputRow)
 export default function SmartJSON(props) {
   const {
     value,
@@ -48,9 +45,9 @@ export default function SmartJSON(props) {
 
 const Content = (props) => {
   const {
-    value,
     grid,
     activeField,
+    renderRow,
     field: { collapsed, view, fields },
   } = props
   const getGrid = () => (collapsed ? { input: 9, right: 0, label: 3 } : grid)
@@ -58,11 +55,7 @@ const Content = (props) => {
   return [
     fields.map((field, index) => {
       if (view === 'tabs' && index !== activeField) return null
-      return (
-        <Fragment key={field.name}>
-          <InputRow {...props} field={field} grid={getGrid()} value={_.get(value, _.last(field.name))} />
-        </Fragment>
-      )
+      return <Fragment key={field.name}>{renderRow(field, { grid: getGrid() })}</Fragment>
     }),
   ]
 }
