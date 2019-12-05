@@ -1,6 +1,6 @@
 {
   "name": "@outcast.by/mui-components",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -41,6 +41,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^5.0.2",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
