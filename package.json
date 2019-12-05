@@ -1,6 +1,6 @@
 {
   "name": "@outcast.by/mui-components",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -14,7 +14,6 @@
   "peerDependencies": {
     "@material-ui/core": "3.x",
     "@material-ui/icons": "3.x",
-    "@outcast.by/js-ext": "^0.x",
     "classnames": "2.x",
     "lodash": "4.x",
     "prop-types": "15.x",
@@ -26,7 +25,6 @@
     "@babel/preset-react": "^7.7.4",
     "@material-ui/core": "3.1.0",
     "@material-ui/icons": "3.0.1",
-    "@outcast.by/js-ext": "^0.0.36",
     "@storybook/addon-actions": "^5.2.8",
     "@storybook/addon-docs": "^5.2.8",
     "@storybook/addon-links": "^5.2.8",
