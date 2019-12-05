@@ -14,7 +14,6 @@ const Select = ({ layout, sm, onChange, value, field: { name, multiple, allowEmp
 
   const normalizedName = _.isArray(name) ? name.join(',') : name
 
-  console.log('aaa', options)
   return (
     <GridItem sm={getSM()} xs={12}>
       <FormControl className={styles.selectFormControl} fullWidth>
