@@ -3,16 +3,24 @@ import GridContainer from '../../components/Grid/GridContainer.jsx'
 import GridItem from '../../components/Grid/GridItem.jsx'
 import Button from '../../components/CustomButtons/Button.jsx'
 import PropTypes from 'prop-types'
+import JssProvider from 'react-jss/lib/JssProvider'
+import { createGenerateClassName } from '@material-ui/core/styles'
+
+const generateClassName = createGenerateClassName({
+  seed: 'mui-components-',
+})
 
 function Form({ settings: { doubleActionsButtons }, customButtons, onSubmit, children }) {
   return (
-    <div id="form-container">
-      <form>
-        {doubleActionsButtons && <ActionButtons onSubmit={onSubmit} />}
-        {children}
-        {customButtons ? customButtons({ onSubmit }) : <ActionButtons onSubmit={onSubmit} />}
-      </form>
-    </div>
+    <JssProvider generateClassName={generateClassName}>
+      <div id="form-container">
+        <form>
+          {doubleActionsButtons && <ActionButtons onSubmit={onSubmit} />}
+          {children}
+          {customButtons ? customButtons({ onSubmit }) : <ActionButtons onSubmit={onSubmit} />}
+        </form>
+      </div>
+    </JssProvider>
   )
 }
 

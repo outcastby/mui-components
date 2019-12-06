@@ -1,6 +1,6 @@
 {
   "name": "@outcast.by/mui-components",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,9 @@
     "@material-ui/icons": "3.x",
     "classnames": "2.x",
     "lodash": "4.x",
-    "prop-types": "15.x"
+    "prop-types": "15.x",
+    "react": "16.x",
+    "react-dom": "16.x"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -53,6 +55,8 @@
     "prettier-eslint": "^9.0.1",
     "prettier-eslint-cli": "^5.0.0",
     "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.12.0",
     "sass-loader": "^8.0.0",
     "svg-inline-loader": "^0.8.0",
@@ -79,9 +83,8 @@
   "dependencies": {
     "jsoneditor-react": "^2.0.0",
     "moment": "^2.24.0",
-    "react": "^16.12.0",
     "react-datetime": "^2.16.3",
-    "react-dom": "^16.12.0",
+    "react-jss": "^8.1.0",
     "remarkable": "^2.0.0"
   },
   "husky": {
