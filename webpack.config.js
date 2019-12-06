@@ -7,13 +7,19 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   mode: 'production',
   entry: './src/index.js',
+  devtool: 'source-map',
   output: {
     path: path.resolve('dist'),
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [
+      new TerserJSPlugin({
+        sourceMap: true,
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
   },
   module: {
     rules: [
