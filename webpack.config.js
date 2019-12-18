@@ -3,8 +3,15 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const devMode = process.env.NODE_ENV !== 'production'
+const nodeExternals = require('webpack-node-externals')
+const package = require('./package.json')
 
 module.exports = {
+  externals: [
+    nodeExternals({
+      whitelist: Object.keys(package.dependencies),
+    }),
+  ],
   mode: 'production',
   entry: './src/index.js',
   devtool: 'source-map',

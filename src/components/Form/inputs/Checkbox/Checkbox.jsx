@@ -11,7 +11,7 @@ function Checkbox({ onChange, value, field: { name, label } }) {
       <FormControlLabel
         control={
           <MUICheckbox
-            checked={value}
+            checked={!!value}
             checkedIcon={<Check className={styles.checkedIcon} />}
             classes={{
               checked: styles.checked,

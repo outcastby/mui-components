@@ -1,12 +1,12 @@
 import React from 'react'
-import Datetime from 'react-datetime'
+import { KeyboardDatePicker } from '@material-ui/pickers'
 import GridItem from '../../../../components/Grid/GridItem.jsx'
 import FormControl from '@material-ui/core/FormControl'
 import styles from './DatePicker.module.scss'
 import FormHelperText from '@material-ui/core/FormHelperText'
 
 function DatePicker({ onChange, value, sm, field: { name }, error, helpText, layout }) {
-  const dateFormat = 'YYYY-MM-DD'
+  const dateFormat = 'yyyy-MM-dd'
 
   const getSM = () => {
     if (layout === 'vertical') return 12
@@ -14,22 +14,18 @@ function DatePicker({ onChange, value, sm, field: { name }, error, helpText, lay
     return 7
   }
 
-  const onDateChange = (e) => {
-    if (e._isAMomentObject) {
-      onChange({ target: { name, value: e.format(dateFormat) } })
-    }
+  const handleChange = (date, value) => {
+    if (date instanceof Date && !isNaN(date)) onChange({ target: { name, value } })
   }
 
   return (
     <GridItem className={styles.container} sm={getSM()} xs={12}>
       <FormControl fullWidth>
-        <Datetime
+        <KeyboardDatePicker
           className={styles.datePicker}
-          dateFormat={dateFormat}
-          defaultValue={value}
-          inputProps={{ value }}
-          onChange={onDateChange}
-          timeFormat={false}
+          format={dateFormat}
+          onChange={handleChange}
+          value={value || new Date()}
         />
         {error && <FormHelperText className="text-danger">{helpText}</FormHelperText>}
       </FormControl>
