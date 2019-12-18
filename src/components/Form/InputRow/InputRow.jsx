@@ -43,7 +43,7 @@ InputRow.propTypes = {
   error: PropTypes.bool,
   field: PropTypes.shape({
     label: PropTypes.string,
-    type: PropTypes.string.isRequired,
+    type: PropTypes.string,
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   }).isRequired,
   grid: PropTypes.object,
