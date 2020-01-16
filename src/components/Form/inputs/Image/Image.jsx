@@ -13,9 +13,16 @@ export default function Image({
   classes = {},
 }) {
   const ref = useRef(null)
-  const [imgWidth, imgHeight] = size.split('x').map((e) => parseInt(e))
 
-  const handleClick = () => {
+  const getImageStyles = () => {
+    if (!size) return {}
+
+    const [imgWidth, imgHeight] = size.split('x').map((e) => parseInt(e))
+
+    return { height: `${BASE_HEIGHT}px`, width: `${Math.round((200 * imgWidth) / imgHeight)}px` }
+  }
+
+  const handleDelete = () => {
     ref.current.value = ''
     onChange({ target: { name, files: [null] } })
   }
@@ -27,13 +34,13 @@ export default function Image({
       {value && (
         <div className={styles.imageContainer}>
           {!forbidDeletion && (
-            <div className={styles.deleteIcon} onClick={handleClick}>
+            <div className={styles.deleteIcon} onClick={handleDelete}>
               <CloseIcon />
             </div>
           )}
           <div onClick={() => ref.current.click()}>
             {value instanceof File ? (
-              <div style={{ height: `${BASE_HEIGHT}px`, width: `${Math.round((200 * imgWidth) / imgHeight)}px` }}>
+              <div style={getImageStyles()}>
                 <img alt={name} className={styles.imagePreview} height="200" src={URL.createObjectURL(value)} />
               </div>
             ) : (

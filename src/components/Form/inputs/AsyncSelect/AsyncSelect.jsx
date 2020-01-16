@@ -17,10 +17,8 @@ const NoOptionsMessage = ({ children, innerProps, selectProps: { classes } }) =>
   </Typography>
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const inputComponent = ({ inputRef, ...props }) => <div ref={inputRef} {...props} />
 
-// eslint-disable-next-line react/no-multi-comp
 const Control = ({ children, innerProps, innerRef, selectProps: { classes, TextFieldProps } }) => (
   <TextField
     fullWidth
@@ -37,7 +35,6 @@ const Control = ({ children, innerProps, innerRef, selectProps: { classes, TextF
   />
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const Option = ({ innerRef, isFocused, innerProps, children }) => (
   <MenuItem
     component="div"
@@ -52,26 +49,22 @@ const Option = ({ innerRef, isFocused, innerProps, children }) => (
   </MenuItem>
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const Placeholder = ({ selectProps, innerProps = {}, children }) => (
   <Typography className={selectProps.classes.placeholder} color="textSecondary" {...innerProps}>
     {children}
   </Typography>
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const SingleValue = ({ selectProps: { classes }, innerProps, children }) => (
   <Typography className={classes.singleValue} {...innerProps}>
     {children}
   </Typography>
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const ValueContainer = ({ selectProps: { classes }, children }) => (
   <div className={classes.valueContainer}>{children}</div>
 )
 
-// eslint-disable-next-line react/no-multi-comp, react/jsx-handler-names
 const MultiValue = ({ isFocused, removeProps, children, selectProps: { classes } }) => (
   <Chip
     className={cs(classes.chip, { [classes.chipFocused]: isFocused })}
@@ -82,7 +75,6 @@ const MultiValue = ({ isFocused, removeProps, children, selectProps: { classes }
   />
 )
 
-// eslint-disable-next-line react/no-multi-comp
 const Menu = ({ children, innerProps, selectProps: { classes } }) => (
   <Paper className={classes.paper} square {...innerProps}>
     {children}
@@ -100,7 +92,6 @@ const components = {
   ValueContainer,
 }
 
-// eslint-disable-next-line react/no-multi-comp
 export default function AsyncSelect({ field: { name, loadOptions }, onChange, value, internalLabel }) {
   const classes = useStyles()
   const theme = useTheme()
