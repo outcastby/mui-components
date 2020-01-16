@@ -5,6 +5,8 @@ import File from './File'
 import Checkbox from './Checkbox'
 import DatePicker from './DatePicker'
 import SmartJSON from './SmartJSON'
+import AsyncSelect from './AsyncSelect'
+import Image from './Image'
 
 export default {
   select: Select,
@@ -17,4 +19,6 @@ export default {
   checkbox: Checkbox,
   datePicker: DatePicker,
   file: File,
+  asyncSelect: AsyncSelect,
+  image: Image,
 }

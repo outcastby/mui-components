@@ -86,6 +86,7 @@
     "date-fns": "^2.8.1",
     "jsoneditor-react": "^2.0.0",
     "react-jss": "^8.1.0",
+    "react-select": "^3.0.8",
     "remarkable": "^2.0.0",
     "webpack-node-externals": "^1.7.2"
   },
