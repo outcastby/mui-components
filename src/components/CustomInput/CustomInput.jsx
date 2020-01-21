@@ -92,7 +92,7 @@ CustomInput.propTypes = {
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
   id: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   inputProps: PropTypes.object,
   inputRootCustomClasses: PropTypes.string,
   error: PropTypes.bool,

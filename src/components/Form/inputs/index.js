@@ -7,6 +7,7 @@ import DatePicker from './DatePicker'
 import SmartJSON from './SmartJSON'
 import AsyncSelect from './AsyncSelect'
 import Image from './Image'
+import Range from './Range'
 
 export default {
   select: Select,
@@ -21,4 +22,5 @@ export default {
   file: File,
   asyncSelect: AsyncSelect,
   image: Image,
+  range: Range,
 }
