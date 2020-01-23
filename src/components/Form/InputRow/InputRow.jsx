@@ -55,7 +55,7 @@ InputRow.propTypes = {
   layout: PropTypes.oneOf(['horizontal', 'vertical']).isRequired,
   onChange: PropTypes.func.isRequired,
   success: PropTypes.bool,
-  value: PropTypes.any.isRequired,
+  value: PropTypes.any,
 }
 
 InputRow.defaultProps = {
@@ -65,6 +65,7 @@ InputRow.defaultProps = {
   helpText: null,
   id: null,
   success: false,
+  value: null,
 }
 
 export default InputRow
