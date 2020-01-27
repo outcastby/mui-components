@@ -92,7 +92,7 @@ const components = {
   ValueContainer,
 }
 
-export default function AsyncSelect({ field: { name, loadOptions }, onChange, value, internalLabel }) {
+export default function AsyncSelect ({ field: { name, loadOptions }, onChange, value, internalLabel }) {
   const classes = useStyles()
   const theme = useTheme()
 

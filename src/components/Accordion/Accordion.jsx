@@ -12,7 +12,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 
 import accordionStyle from './accordionStyle.jsx'
 
-function Accordion({ active, collapses, classes }) {
+function Accordion ({ active, collapses, classes }) {
   const [activeEl, setActiveEl] = useState(active)
 
   const handleChange = (panel) => (event, expanded) => setActiveEl(expanded ? panel : -1)
@@ -33,7 +33,7 @@ function Accordion({ active, collapses, classes }) {
             <ExpansionPanelSummary
               classes={{
                 root: classes.expansionPanelSummary,
-                expanded: classes.expansionPanelSummaryExpaned,
+                expanded: classes.expansionPanelSummaryExpanded,
                 content: classes.expansionPanelSummaryContent,
                 expandIcon: classes.expansionPanelSummaryExpandIcon,
               }}

@@ -22,11 +22,12 @@ const accordionStyle = (theme) => ({
       color: primaryColor,
     },
   },
-  expansionPanelSummaryExpaned: {
+  expansionPanelSummaryExpanded: {
     color: primaryColor,
     '& $expansionPanelSummaryExpandIcon': {
       [theme.breakpoints.up('md')]: {
         top: 'auto !important',
+        marginRight: '0',
       },
       transform: 'rotate(180deg)',
       [theme.breakpoints.down('sm')]: {
@@ -41,6 +42,7 @@ const accordionStyle = (theme) => ({
   expansionPanelSummaryExpandIcon: {
     [theme.breakpoints.up('md')]: {
       top: 'auto !important',
+      marginRight: '0',
     },
     transform: 'rotate(0deg)',
     color: 'inherit',

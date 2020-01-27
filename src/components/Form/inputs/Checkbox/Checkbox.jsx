@@ -5,7 +5,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Check from '@material-ui/icons/Check'
 import styles from './Checkbox.module.scss'
 
-function Checkbox({ onChange, value, field: { name, label } }) {
+function Checkbox ({ onChange, value, field: { name, label } }) {
   return (
     <GridItem sm={7} xs={12}>
       <FormControlLabel

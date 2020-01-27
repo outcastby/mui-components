@@ -7,15 +7,7 @@ import GridItem from '../../../Grid/GridItem'
 import GridContainer from '../../../Grid/GridContainer'
 import styles from './Range.module.scss'
 
-export default function Range({
-  helpText,
-  error,
-  classes = {},
-  value: [start, end],
-  value,
-  onChange,
-  field: { name },
-}) {
+export default function Range ({ errors, classes = {}, value: [start, end], value, onChange, field: { name } }) {
   const handleChange = ({ target }) => onChange({ target: { value: fp.setIn(value, target.name, target.value), name } })
 
   return (
@@ -43,7 +35,7 @@ export default function Range({
           />
         </GridItem>
       </GridContainer>
-      {error && <FormHelperText className={classes.labelRootError}>{helpText}</FormHelperText>}
+      {errors && <FormHelperText className={classes.labelRootError}>{errors}</FormHelperText>}
     </GridItem>
   )
 }

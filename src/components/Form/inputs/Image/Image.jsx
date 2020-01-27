@@ -4,14 +4,7 @@ import styles from './Image.module.scss'
 import CloseIcon from '@material-ui/icons/CloseOutlined'
 
 const BASE_HEIGHT = 200
-export default function Image({
-  field: { name, size, forbidDeletion },
-  value,
-  onChange,
-  helpText,
-  error,
-  classes = {},
-}) {
+export default function Image ({ field: { name, size, forbidDeletion }, value, onChange, errors, classes = {} }) {
   const ref = useRef(null)
 
   const getImageStyles = () => {
@@ -30,7 +23,7 @@ export default function Image({
   return (
     <div className={styles.container}>
       <input hidden={!!value} name={name} onChange={onChange} ref={ref} type="file" />
-      {error && <FormHelperText className={classes.labelRootError}>{helpText}</FormHelperText>}
+      {errors && <FormHelperText className={classes.labelRootError}>{errors}</FormHelperText>}
       {value && (
         <div className={styles.imageContainer}>
           {!forbidDeletion && (

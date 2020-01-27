@@ -3,7 +3,7 @@ import { JsonEditor as Editor } from 'jsoneditor-react'
 import GridItem from '../../../../components/Grid/GridItem.jsx'
 import './JSON.scss'
 
-function JSON({ onChange, value, layout, sm }) {
+function JSON ({ onChange, value, layout, sm }) {
   const getSM = () => {
     if (sm) return sm
     return layout === 'vertical' ? 12 : 7

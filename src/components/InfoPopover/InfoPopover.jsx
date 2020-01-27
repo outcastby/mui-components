@@ -1,14 +1,15 @@
 import React from 'react'
-import Icon from '@material-ui/core/Icon'
+// import Icon from '@material-ui/core/Icon'
 import styles from './InfoPopover.module.scss'
 import Popover from '@material-ui/core/Popover'
 import cs from 'classnames'
 import { Remarkable } from 'remarkable'
+import InfoIcon from '@material-ui/icons/Info'
 
 const md = new Remarkable()
 
 export default class InfoPopover extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       anchorEl: null,
@@ -32,21 +33,19 @@ export default class InfoPopover extends React.Component {
 
   isOpen = () => Boolean(this.state.anchorEl)
 
-  render() {
+  render () {
     const { iconClass, body } = this.props
     const { anchorEl, formattedBody } = this.state
     if (!body) return null
 
     return (
       <>
-        <Icon
+        <InfoIcon
           aria-haspopup="true"
           aria-owns={this.isOpen() ? 'mouse-over-popover' : undefined}
           className={cs(styles.icon, iconClass)}
           onClick={this.handlePopoverOpen}
-        >
-          info
-        </Icon>
+        />
         <Popover
           anchorEl={anchorEl}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}

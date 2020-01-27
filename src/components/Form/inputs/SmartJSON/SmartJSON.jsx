@@ -3,14 +3,17 @@ import GridItem from '../../../../components/Grid/GridItem.jsx'
 import Tabs from './Tabs'
 import GridContainer from '../../../../components/Grid/GridContainer'
 import Accordion from '../../../../components/Accordion/Accordion'
+import styles from './SmartJSON.module.scss'
+import cs from 'classnames'
 
-export default function SmartJSON(props) {
+export default function SmartJSON (props) {
   const {
     value,
     grid = {},
     activeField,
     setActiveField,
     field: { view, fields, collapsed },
+    errors,
   } = props
 
   return (
@@ -27,7 +30,7 @@ export default function SmartJSON(props) {
                   title: (
                     <GridContainer>
                       <GridItem sm={10} xs={12}>
-                        <div className="ml10">{value && value.type}</div>
+                        <div className={cs('ml10', { [styles.labelRootError]: errors })}>{value && value.type}</div>
                       </GridItem>
                     </GridContainer>
                   ),

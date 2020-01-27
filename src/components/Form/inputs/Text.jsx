@@ -5,16 +5,7 @@ import CustomInput from '../../../components/CustomInput/CustomInput.jsx'
 import Close from '@material-ui/icons/Close'
 import GridItem from '../../../components/Grid/GridItem.jsx'
 
-function Text({
-  success,
-  error,
-  helpText,
-  onChange,
-  value,
-  sm,
-  layout,
-  field: { name, type, icon, label, defaultValue },
-}) {
+function Text ({ success, errors, onChange, value, sm, layout, field: { name, type, icon, label, defaultValue } }) {
   // TODO (atanych): unify that
   const getSM = () => {
     if (layout === 'vertical') return 12
@@ -25,13 +16,13 @@ function Text({
   return (
     <GridItem sm={getSM()} xs={12}>
       <CustomInput
-        error={error}
+        error={!!errors}
         formControlProps={{ fullWidth: true }}
-        helpText={helpText}
+        helpText={errors}
         inputProps={{
           onChange: onChange,
           type,
-          endAdornment: <EndAdornment error={error} icon={icon} />,
+          endAdornment: <EndAdornment error={!!errors} icon={icon} />,
         }}
         labelText={layout === 'vertical' ? label : null}
         name={name}

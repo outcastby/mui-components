@@ -3,7 +3,7 @@ import BaseTabs from '@material-ui/core/Tabs'
 import React from 'react'
 import InfoPopover from '../../../../../components/InfoPopover'
 
-export default function Tabs({ activeTab, fields, onChangeTab, className }) {
+export default function Tabs ({ activeTab, fields, onChangeTab, className }) {
   return (
     <BaseTabs
       centered
