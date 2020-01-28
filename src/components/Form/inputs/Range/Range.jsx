@@ -35,7 +35,7 @@ export default function Range ({ errors, classes = {}, value: [start, end], valu
           />
         </GridItem>
       </GridContainer>
-      {errors && <FormHelperText className={classes.labelRootError}>{errors}</FormHelperText>}
+      {errors && <FormHelperText className={classes.labelRootError}>{errors[0]}</FormHelperText>}
     </GridItem>
   )
 }

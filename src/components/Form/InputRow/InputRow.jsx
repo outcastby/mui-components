@@ -40,7 +40,7 @@ InputRow.propTypes = {
    If config is not passed directly, used configuration through Config.get(['jsExt', ...])
    */
   config: PropTypes.object,
-  errors: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  errors: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   field: PropTypes.shape({
     label: PropTypes.string,
     type: PropTypes.string,

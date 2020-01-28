@@ -27,7 +27,7 @@ function DatePicker ({ onChange, value, sm, field: { name }, errors, layout }) {
           onChange={handleChange}
           value={value || new Date()}
         />
-        {errors && <FormHelperText className="text-danger">{errors}</FormHelperText>}
+        {errors && <FormHelperText className="text-danger">{errors[0]}</FormHelperText>}
       </FormControl>
     </GridItem>
   )

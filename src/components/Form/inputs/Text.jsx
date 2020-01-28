@@ -18,7 +18,7 @@ function Text ({ success, errors, onChange, value, sm, layout, field: { name, ty
       <CustomInput
         error={!!errors}
         formControlProps={{ fullWidth: true }}
-        helpText={errors}
+        helpText={errors && errors[0]}
         inputProps={{
           onChange: onChange,
           type,

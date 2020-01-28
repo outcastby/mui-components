@@ -23,7 +23,7 @@ export default function Image ({ field: { name, size, forbidDeletion }, value, o
   return (
     <div className={styles.container}>
       <input hidden={!!value} name={name} onChange={onChange} ref={ref} type="file" />
-      {errors && <FormHelperText className={classes.labelRootError}>{errors}</FormHelperText>}
+      {errors && <FormHelperText className={classes.labelRootError}>{errors[0]}</FormHelperText>}
       {value && (
         <div className={styles.imageContainer}>
           {!forbidDeletion && (
