@@ -37,17 +37,16 @@ const InputRow = (props) => {
 InputRow.propTypes = {
   actionType: PropTypes.oneOf(['edit', 'new']).isRequired,
   /**
-   If config is not passed directly, usead configuration through Config.get(['jsExt', ...])
+   If config is not passed directly, used configuration through Config.get(['jsExt', ...])
    */
   config: PropTypes.object,
-  error: PropTypes.bool,
+  errors: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   field: PropTypes.shape({
     label: PropTypes.string,
     type: PropTypes.string,
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   }).isRequired,
   grid: PropTypes.object,
-  helpText: PropTypes.string,
   id: PropTypes.number,
   /**
    Input representation.
@@ -60,9 +59,8 @@ InputRow.propTypes = {
 
 InputRow.defaultProps = {
   config: {},
-  error: false,
+  errors: null,
   grid: {},
-  helpText: null,
   id: null,
   success: false,
   value: null,

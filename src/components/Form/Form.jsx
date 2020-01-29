@@ -10,7 +10,7 @@ const generateClassName = createGenerateClassName({
   seed: 'mui-components-',
 })
 
-function Form({ settings: { doubleActionsButtons }, customButtons, onSubmit, children }) {
+function Form ({ settings: { doubleActionsButtons }, customButtons, onSubmit, children }) {
   return (
     <JssProvider generateClassName={generateClassName}>
       <div id="form-container">

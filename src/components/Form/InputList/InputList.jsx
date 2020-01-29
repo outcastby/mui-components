@@ -7,9 +7,10 @@ import styles from '../InputRow/InputRow.module.scss'
 import FormLabel from '@material-ui/core/FormLabel'
 import Accordion from '../../../components/Accordion/Accordion.jsx'
 import GridContainer from '../../../components/Grid/GridContainer'
+import cs from 'classnames'
 
 const InputList = (props) => {
-  const { hasLabel, values, field, onAdd, onRemove, renderRow } = props
+  const { hasLabel, values, field, onAdd, onRemove, renderRow, errors } = props
   return (
     <GridContainer>
       <GridItem sm={3} xs={12}>
@@ -41,7 +42,9 @@ const InputList = (props) => {
               title: (
                 <GridContainer key={item.__uuid || j}>
                   <GridItem sm={10} xs={12}>
-                    <div className="ml10">{`#${j} ${item.type ? item.type : ''}`}</div>
+                    <div className={cs('ml10', { [styles.labelRootError]: errors && errors[j] })}>
+                      {`#${j} ${item.type ? item.type : ''}`}
+                    </div>
                   </GridItem>
                 </GridContainer>
               ),

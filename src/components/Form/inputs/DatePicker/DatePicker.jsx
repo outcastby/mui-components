@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl'
 import styles from './DatePicker.module.scss'
 import FormHelperText from '@material-ui/core/FormHelperText'
 
-function DatePicker({ onChange, value, sm, field: { name }, error, helpText, layout }) {
+function DatePicker ({ onChange, value, sm, field: { name }, errors, layout }) {
   const dateFormat = 'yyyy-MM-dd'
 
   const getSM = () => {
@@ -27,7 +27,7 @@ function DatePicker({ onChange, value, sm, field: { name }, error, helpText, lay
           onChange={handleChange}
           value={value || new Date()}
         />
-        {error && <FormHelperText className="text-danger">{helpText}</FormHelperText>}
+        {errors && <FormHelperText className="text-danger">{errors[0]}</FormHelperText>}
       </FormControl>
     </GridItem>
   )

@@ -1,6 +1,6 @@
 {
   "name": "@outcast.by/mui-components",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
@@ -101,7 +101,6 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "eslint --fix  \"**/*.{js,jsx}\"",
-      "prettier -l \"**/*.{js,jsx,scss}\" --write",
       "git add"
     ]
   },
