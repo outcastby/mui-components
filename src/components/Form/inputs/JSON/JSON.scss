@@ -1,9 +1,21 @@
 @import '~jsoneditor-react/es/editor.min.css';
 
 .jsoneditor {
-  border: 1px solid #b8babc;
+  border: none !important;
+}
+
+.jsoneditor-text {
+  border: 1px solid #b8babc !important;
+  &:focus {
+    border-color: #9c27b0 !important;
+  }
 }
 
 .jsoneditor-menu {
   display: none;
+}
+
+.jsoneditor-outer {
+  margin: 0 !important;
+  padding: 0 !important;
 }

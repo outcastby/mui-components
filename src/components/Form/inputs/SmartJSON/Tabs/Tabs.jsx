@@ -1,30 +1,48 @@
-import Tab from '@material-ui/core/Tab'
+import BaseTab from '@material-ui/core/Tab'
 import BaseTabs from '@material-ui/core/Tabs'
+import { withStyles } from '@material-ui/core/styles'
 import React from 'react'
 import InfoPopover from '../../../../../components/InfoPopover'
 
-export default function Tabs ({ activeTab, fields, onChangeTab, className }) {
+const Tabs = ({ activeTab, fields, onChangeTab, className }) => {
   return (
-    <BaseTabs
-      centered
-      className={className}
-      indicatorColor="primary"
-      onChange={(_e, index) => onChangeTab(index)}
-      textColor="primary"
-      value={activeTab}
-    >
+    <StyledTabs centered className={className} onChange={(_e, index) => onChangeTab(index)} value={activeTab}>
       {fields.map((f) => (
-        <Tab key={f.name} label={<TabLabel {...f} />} />
+        <StyledTab key={f.name} label={<TabLabel {...f} />} />
       ))}
-    </BaseTabs>
+    </StyledTabs>
   )
 }
+
+const StyledTabs = withStyles({
+  indicator: {
+    backgroundColor: '#9c27b0',
+  },
+})(BaseTabs)
+
+const StyledTab = withStyles({
+  root: {
+    '&:hover': {
+      color: '#9c27b0',
+      opacity: 1,
+    },
+    '&$selected': {
+      color: '#9c27b0',
+    },
+    '&:focus': {
+      color: '#9c27b0',
+    },
+  },
+  selected: {},
+})((props) => <BaseTab disableRipple {...props} />)
 
 const TabLabel = ({ info, tab }) => {
   return (
     <div className="align-middle">
-      <span>{tab}</span>
+      <span className="test-class">{tab}</span>
       <InfoPopover body={info} />
     </div>
   )
 }
+
+export default Tabs
