@@ -25,8 +25,6 @@ export default class InfoPopover extends React.Component {
 
   handlePopoverOpen = (event) => {
     this.setState({ anchorEl: event.currentTarget })
-    event.preventDefault()
-    event.stopPropagation()
   }
 
   handlePopoverClose = () => this.setState({ anchorEl: null })
@@ -39,7 +37,7 @@ export default class InfoPopover extends React.Component {
     if (!body) return null
 
     return (
-      <>
+      <div onClick={(e) => e.stopPropagation()}>
         <InfoIcon
           aria-haspopup="true"
           aria-owns={this.isOpen() ? 'mouse-over-popover' : undefined}
@@ -56,7 +54,7 @@ export default class InfoPopover extends React.Component {
         >
           <div className="m20" dangerouslySetInnerHTML={{ __html: md.render(formattedBody) }} />
         </Popover>
-      </>
+      </div>
     )
   }
 }
