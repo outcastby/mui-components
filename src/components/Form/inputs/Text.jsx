@@ -13,6 +13,12 @@ function Text ({ success, errors, onChange, value, sm, layout, field: { name, ty
     return 7
   }
 
+  const getValue = (value) => {
+    if (value === 0 || value) return value
+    if (defaultValue) return defaultValue
+    return ''
+  }
+
   return (
     <GridItem sm={getSM()} xs={12}>
       <CustomInput
@@ -27,7 +33,7 @@ function Text ({ success, errors, onChange, value, sm, layout, field: { name, ty
         labelText={layout === 'vertical' ? label : null}
         name={name}
         success={success}
-        value={value || defaultValue}
+        value={getValue(value)}
       />
     </GridItem>
   )
